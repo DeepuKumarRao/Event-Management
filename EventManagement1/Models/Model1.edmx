@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin" />
+          </Key>
+          <Property Name="Admin" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="char" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_Table">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="int" Nullable="false" />
+          <Property Name="Hotel_Price" Type="int" Nullable="false" />
+          <Property Name="Tent_Price" Type="int" Nullable="false" />
+          <Property Name="Plate_Price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_Entry">
+          <Key>
+            <PropertyRef Name="Cust_Id" />
+          </Key>
+          <Property Name="Cust_Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Mobile_No" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="Address" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="Id_Proof" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Email" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="Password" Type="char" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Event_Details_Entry">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="int" Nullable="false" />
+          <Property Name="Event_Loc_Id" Type="int" Nullable="false" />
+          <Property Name="Tent_Id" Type="int" Nullable="false" />
+          <Property Name="DOF" Type="date" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="Plate_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event_Table">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="int" Nullable="false" />
+          <Property Name="Cust_Id" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Event" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="DOF" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hotel_Event">
+          <Key>
+            <PropertyRef Name="Hotel_Id" />
+          </Key>
+          <Property Name="Hotel_Id" Type="int" Nullable="false" />
+          <Property Name="Hotel_Name" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="Hotel_Price" Type="int" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plate_Table">
+          <Key>
+            <PropertyRef Name="Plate_Id" />
+          </Key>
+          <Property Name="Plate_Id" Type="int" Nullable="false" />
+          <Property Name="Plate_Name" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tent_Name">
+          <Key>
+            <PropertyRef Name="Tent_Id" />
+          </Key>
+          <Property Name="Tent_Id" Type="int" Nullable="false" />
+          <Property Name="Tent_Name" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Tent_Size" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="Tent_Price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cost_Table" EntityType="Self.Cost_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_Entry" EntityType="Self.Customer_Entry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event_Details_Entry" EntityType="Self.Event_Details_Entry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event_Table" EntityType="Self.Event_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hotel_Event" EntityType="Self.Hotel_Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plate_Table" EntityType="Self.Plate_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tent_Name" EntityType="Self.Tent_Name" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Admin1" />
+          </Key>
+          <Property Name="Admin1" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cost_Table">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="Int32" Nullable="false" />
+          <Property Name="Hotel_Price" Type="Int32" Nullable="false" />
+          <Property Name="Tent_Price" Type="Int32" Nullable="false" />
+          <Property Name="Plate_Price" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_Entry">
+          <Key>
+            <PropertyRef Name="Cust_Id" />
+          </Key>
+          <Property Name="Cust_Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Mobile_No" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Id_Proof" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Event_Details_Entry">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="Int32" Nullable="false" />
+          <Property Name="Event_Loc_Id" Type="Int32" Nullable="false" />
+          <Property Name="Tent_Id" Type="Int32" Nullable="false" />
+          <Property Name="DOF" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <Property Name="Plate_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Event_Table">
+          <Key>
+            <PropertyRef Name="Event_Id" />
+          </Key>
+          <Property Name="Event_Id" Type="Int32" Nullable="false" />
+          <Property Name="Cust_Id" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Event" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DOF" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="Hotel_Event">
+          <Key>
+            <PropertyRef Name="Hotel_Id" />
+          </Key>
+          <Property Name="Hotel_Id" Type="Int32" Nullable="false" />
+          <Property Name="Hotel_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Hotel_Price" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Event_ManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Cost_Table" EntityType="Self.Cost_Table" />
+          <EntitySet Name="Customer_Entry" EntityType="Self.Customer_Entry" />
+          <EntitySet Name="Event_Details_Entry" EntityType="Self.Event_Details_Entry" />
+          <EntitySet Name="Event_Table" EntityType="Self.Event_Table" />
+          <EntitySet Name="Hotel_Event" EntityType="Self.Hotel_Event" />
+          <EntitySet Name="Plate_Table" EntityType="Model.Plate_Table" />
+          <EntitySet Name="Tent_Name" EntityType="Model.Tent_Name" />
+        </EntityContainer>
+        <EntityType Name="Plate_Table">
+          <Key>
+            <PropertyRef Name="Plate_Id" />
+          </Key>
+          <Property Name="Plate_Id" Type="Int32" Nullable="false" />
+          <Property Name="Plate_Name" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tent_Name">
+          <Key>
+            <PropertyRef Name="Tent_Id" />
+          </Key>
+          <Property Name="Tent_Id" Type="Int32" Nullable="false" />
+          <Property Name="Tent_Name1" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Tent_Size" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="Tent_Price" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Event_ManagementEntities">
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="Model.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="Admin1" ColumnName="Admin" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cost_Table">
+            <EntityTypeMapping TypeName="Model.Cost_Table">
+              <MappingFragment StoreEntitySet="Cost_Table">
+                <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+                <ScalarProperty Name="Hotel_Price" ColumnName="Hotel_Price" />
+                <ScalarProperty Name="Tent_Price" ColumnName="Tent_Price" />
+                <ScalarProperty Name="Plate_Price" ColumnName="Plate_Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Entry">
+            <EntityTypeMapping TypeName="Model.Customer_Entry">
+              <MappingFragment StoreEntitySet="Customer_Entry">
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Id_Proof" ColumnName="Id_Proof" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_Details_Entry">
+            <EntityTypeMapping TypeName="Model.Event_Details_Entry">
+              <MappingFragment StoreEntitySet="Event_Details_Entry">
+                <ScalarProperty Name="Plate_Id" ColumnName="Plate_Id" />
+                <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+                <ScalarProperty Name="Event_Loc_Id" ColumnName="Event_Loc_Id" />
+                <ScalarProperty Name="Tent_Id" ColumnName="Tent_Id" />
+                <ScalarProperty Name="DOF" ColumnName="DOF" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Event_Table">
+            <EntityTypeMapping TypeName="Model.Event_Table">
+              <MappingFragment StoreEntitySet="Event_Table">
+                <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+                <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="DOF" ColumnName="DOF" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hotel_Event">
+            <EntityTypeMapping TypeName="Model.Hotel_Event">
+              <MappingFragment StoreEntitySet="Hotel_Event">
+                <ScalarProperty Name="Hotel_Id" ColumnName="Hotel_Id" />
+                <ScalarProperty Name="Hotel_Name" ColumnName="Hotel_Name" />
+                <ScalarProperty Name="Hotel_Price" ColumnName="Hotel_Price" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plate_Table">
+            <EntityTypeMapping TypeName="Model.Plate_Table">
+              <MappingFragment StoreEntitySet="Plate_Table">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Plate_Name" ColumnName="Plate_Name" />
+                <ScalarProperty Name="Plate_Id" ColumnName="Plate_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tent_Name">
+            <EntityTypeMapping TypeName="Model.Tent_Name">
+              <MappingFragment StoreEntitySet="Tent_Name">
+                <ScalarProperty Name="Tent_Price" ColumnName="Tent_Price" />
+                <ScalarProperty Name="Tent_Size" ColumnName="Tent_Size" />
+                <ScalarProperty Name="Tent_Name1" ColumnName="Tent_Name" />
+                <ScalarProperty Name="Tent_Id" ColumnName="Tent_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Event_ManagementEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="Model.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Admin1" ColumnName="Admin" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cost_Table">
+      <EntityTypeMapping TypeName="Model.Cost_Table">
+        <MappingFragment StoreEntitySet="Cost_Table">
+          <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+          <ScalarProperty Name="Hotel_Price" ColumnName="Hotel_Price" />
+          <ScalarProperty Name="Tent_Price" ColumnName="Tent_Price" />
+          <ScalarProperty Name="Plate_Price" ColumnName="Plate_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Entry">
+      <EntityTypeMapping TypeName="Model.Customer_Entry">
+        <MappingFragment StoreEntitySet="Customer_Entry">
+          <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Id_Proof" ColumnName="Id_Proof" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_Details_Entry">
+      <EntityTypeMapping TypeName="Model.Event_Details_Entry">
+        <MappingFragment StoreEntitySet="Event_Details_Entry">
+          <ScalarProperty Name="Plate_Id" ColumnName="Plate_Id" />
+          <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+          <ScalarProperty Name="Event_Loc_Id" ColumnName="Event_Loc_Id" />
+          <ScalarProperty Name="Tent_Id" ColumnName="Tent_Id" />
+          <ScalarProperty Name="DOF" ColumnName="DOF" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Event_Table">
+      <EntityTypeMapping TypeName="Model.Event_Table">
+        <MappingFragment StoreEntitySet="Event_Table">
+          <ScalarProperty Name="Event_Id" ColumnName="Event_Id" />
+          <ScalarProperty Name="Cust_Id" ColumnName="Cust_Id" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="DOF" ColumnName="DOF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hotel_Event">
+      <EntityTypeMapping TypeName="Model.Hotel_Event">
+        <MappingFragment StoreEntitySet="Hotel_Event">
+          <ScalarProperty Name="Hotel_Id" ColumnName="Hotel_Id" />
+          <ScalarProperty Name="Hotel_Name" ColumnName="Hotel_Name" />
+          <ScalarProperty Name="Hotel_Price" ColumnName="Hotel_Price" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Plate_Table">
+      <EntityTypeMapping TypeName="Model.Plate_Table">
+        <MappingFragment StoreEntitySet="Plate_Table">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Plate_Name" ColumnName="Plate_Name" />
+          <ScalarProperty Name="Plate_Id" ColumnName="Plate_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tent_Name">
+      <EntityTypeMapping TypeName="Model.Tent_Name">
+        <MappingFragment StoreEntitySet="Tent_Name">
+          <ScalarProperty Name="Tent_Price" ColumnName="Tent_Price" />
+          <ScalarProperty Name="Tent_Size" ColumnName="Tent_Size" />
+          <ScalarProperty Name="Tent_Name1" ColumnName="Tent_Name" />
+          <ScalarProperty Name="Tent_Id" ColumnName="Tent_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

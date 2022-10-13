@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin" />
+    </Key>
+    <Property Name="Admin" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cost_Table">
+    <Key>
+      <PropertyRef Name="Event_Id" />
+    </Key>
+    <Property Name="Event_Id" Type="int" Nullable="false" />
+    <Property Name="Hotel_Price" Type="int" Nullable="false" />
+    <Property Name="Tent_Price" Type="int" Nullable="false" />
+    <Property Name="Plate_Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer_Entry">
+    <Key>
+      <PropertyRef Name="Cust_Id" />
+    </Key>
+    <Property Name="Cust_Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Mobile_No" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="Address" Type="char" MaxLength="50" Nullable="false" />
+    <Property Name="Id_Proof" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Event_Details_Entry">
+    <Key>
+      <PropertyRef Name="Event_Id" />
+    </Key>
+    <Property Name="Event_Id" Type="int" Nullable="false" />
+    <Property Name="Event_Loc_Id" Type="int" Nullable="false" />
+    <Property Name="Tent_Id" Type="int" Nullable="false" />
+    <Property Name="DOF" Type="date" Nullable="false" />
+    <Property Name="Day" Type="int" Nullable="false" />
+    <Property Name="Plate_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_Table">
+    <Key>
+      <PropertyRef Name="Event_Id" />
+    </Key>
+    <Property Name="Event_Id" Type="int" Nullable="false" />
+    <Property Name="Cust_Id" Type="int" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Event" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="DOF" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotel_Event">
+    <Key>
+      <PropertyRef Name="Hotel_Id" />
+    </Key>
+    <Property Name="Hotel_Id" Type="int" Nullable="false" />
+    <Property Name="Hotel_Name" Type="char" MaxLength="30" Nullable="false" />
+    <Property Name="Hotel_Price" Type="int" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plate_Table">
+    <Key>
+      <PropertyRef Name="Plate_Id" />
+    </Key>
+    <Property Name="Plate_Id" Type="int" Nullable="false" />
+    <Property Name="Plate_Name" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tent_Name">
+    <Key>
+      <PropertyRef Name="Tent_Id" />
+    </Key>
+    <Property Name="Tent_Id" Type="int" Nullable="false" />
+    <Property Name="Tent_Name" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Tent_Size" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Tent_Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cost_Table" EntityType="Self.Cost_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Entry" EntityType="Self.Customer_Entry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_Details_Entry" EntityType="Self.Event_Details_Entry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Event_Table" EntityType="Self.Event_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel_Event" EntityType="Self.Hotel_Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Plate_Table" EntityType="Self.Plate_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tent_Name" EntityType="Self.Tent_Name" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
